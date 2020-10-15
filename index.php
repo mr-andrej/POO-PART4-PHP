@@ -11,5 +11,13 @@ require_once 'MotorWay.php';
 require_once 'PedestrianWay.php';
 require_once 'ResidentialWay.php';
 
-// No testing demanded, but all necessary php files are implemented in case there is any doubt
-// in the eyes of the beholder of this code
+$BMW = new Car("pink", "5", "diesel");
+try {
+    echo "Trying to start my car!<br>";
+    $BMW->start();
+} catch(Exception $e) {
+    $BMW->setHasParkBrake(false);
+    echo $e->getMessage() . " I pushed it down! Trying to start again...<br>";
+} finally {
+    echo "My car drives like a donut";
+}
