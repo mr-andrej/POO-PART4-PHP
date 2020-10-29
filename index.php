@@ -18,6 +18,7 @@ try {
 } catch(Exception $e) {
     $BMW->setHasParkBrake(false);
     echo $e->getMessage() . " I pushed it down! Trying to start again...<br>";
+    $BMW->start();
 } finally {
     echo "My car drives like a donut";
 }
